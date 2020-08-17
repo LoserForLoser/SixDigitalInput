@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24858F6F24E96DE800615BA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24858F6E24E96DE800615BA6 /* AppDelegate.m */; };
+		24858F7524E96DE800615BA6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24858F7424E96DE800615BA6 /* ViewController.m */; };
+		24858F7824E96DE800615BA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24858F7624E96DE800615BA6 /* Main.storyboard */; };
+		24858F7A24E96DEA00615BA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24858F7924E96DEA00615BA6 /* Assets.xcassets */; };
+		24858F7D24E96DEA00615BA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24858F7B24E96DEA00615BA6 /* LaunchScreen.storyboard */; };
+		24858F8024E96DEA00615BA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24858F7F24E96DEA00615BA6 /* main.m */; };
+		24858F8A24E96DEB00615BA6 /* SixDigitalInputTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24858F8924E96DEB00615BA6 /* SixDigitalInputTestTests.m */; };
+		24858F9524E96DEB00615BA6 /* SixDigitalInputTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24858F9424E96DEB00615BA6 /* SixDigitalInputTestUITests.m */; };
+		24858FA424E96F1000615BA6 /* CertificatePasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 24858FA324E96F1000615BA6 /* CertificatePasswordTextField.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24858F8624E96DEB00615BA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24858F6224E96DE800615BA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24858F6924E96DE800615BA6;
+			remoteInfo = SixDigitalInputTest;
+		};
+		24858F9124E96DEB00615BA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24858F6224E96DE800615BA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24858F6924E96DE800615BA6;
+			remoteInfo = SixDigitalInputTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24858F6A24E96DE800615BA6 /* SixDigitalInputTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixDigitalInputTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24858F6D24E96DE800615BA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		24858F6E24E96DE800615BA6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		24858F7324E96DE800615BA6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		24858F7424E96DE800615BA6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		24858F7724E96DE800615BA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		24858F7924E96DEA00615BA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		24858F7C24E96DEA00615BA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		24858F7E24E96DEA00615BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24858F7F24E96DEA00615BA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		24858F8524E96DEB00615BA6 /* SixDigitalInputTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixDigitalInputTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24858F8924E96DEB00615BA6 /* SixDigitalInputTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SixDigitalInputTestTests.m; sourceTree = "<group>"; };
+		24858F8B24E96DEB00615BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24858F9024E96DEB00615BA6 /* SixDigitalInputTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixDigitalInputTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24858F9424E96DEB00615BA6 /* SixDigitalInputTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SixDigitalInputTestUITests.m; sourceTree = "<group>"; };
+		24858F9624E96DEB00615BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24858FA224E96F1000615BA6 /* CertificatePasswordTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CertificatePasswordTextField.h; sourceTree = "<group>"; };
+		24858FA324E96F1000615BA6 /* CertificatePasswordTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CertificatePasswordTextField.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24858F6724E96DE800615BA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24858F8224E96DEB00615BA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24858F8D24E96DEB00615BA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24858F6124E96DE800615BA6 = {
+			isa = PBXGroup;
+			children = (
+				24858F6C24E96DE800615BA6 /* SixDigitalInputTest */,
+				24858F8824E96DEB00615BA6 /* SixDigitalInputTestTests */,
+				24858F9324E96DEB00615BA6 /* SixDigitalInputTestUITests */,
+				24858F6B24E96DE800615BA6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		24858F6B24E96DE800615BA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24858F6A24E96DE800615BA6 /* SixDigitalInputTest.app */,
+				24858F8524E96DEB00615BA6 /* SixDigitalInputTestTests.xctest */,
+				24858F9024E96DEB00615BA6 /* SixDigitalInputTestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24858F6C24E96DE800615BA6 /* SixDigitalInputTest */ = {
+			isa = PBXGroup;
+			children = (
+				24858F6D24E96DE800615BA6 /* AppDelegate.h */,
+				24858F6E24E96DE800615BA6 /* AppDelegate.m */,
+				24858F7324E96DE800615BA6 /* ViewController.h */,
+				24858F7424E96DE800615BA6 /* ViewController.m */,
+				24858FA224E96F1000615BA6 /* CertificatePasswordTextField.h */,
+				24858FA324E96F1000615BA6 /* CertificatePasswordTextField.m */,
+				24858F7624E96DE800615BA6 /* Main.storyboard */,
+				24858F7924E96DEA00615BA6 /* Assets.xcassets */,
+				24858F7B24E96DEA00615BA6 /* LaunchScreen.storyboard */,
+				24858F7E24E96DEA00615BA6 /* Info.plist */,
+				24858F7F24E96DEA00615BA6 /* main.m */,
+			);
+			path = SixDigitalInputTest;
+			sourceTree = "<group>";
+		};
+		24858F8824E96DEB00615BA6 /* SixDigitalInputTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				24858F8924E96DEB00615BA6 /* SixDigitalInputTestTests.m */,
+				24858F8B24E96DEB00615BA6 /* Info.plist */,
+			);
+			path = SixDigitalInputTestTests;
+			sourceTree = "<group>";
+		};
+		24858F9324E96DEB00615BA6 /* SixDigitalInputTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				24858F9424E96DEB00615BA6 /* SixDigitalInputTestUITests.m */,
+				24858F9624E96DEB00615BA6 /* Info.plist */,
+			);
+			path = SixDigitalInputTestUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24858F6924E96DE800615BA6 /* SixDigitalInputTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24858F9924E96DEB00615BA6 /* Build configuration list for PBXNativeTarget "SixDigitalInputTest" */;
+			buildPhases = (
+				24858F6624E96DE800615BA6 /* Sources */,
+				24858F6724E96DE800615BA6 /* Frameworks */,
+				24858F6824E96DE800615BA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SixDigitalInputTest;
+			productName = SixDigitalInputTest;
+			productReference = 24858F6A24E96DE800615BA6 /* SixDigitalInputTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		24858F8424E96DEB00615BA6 /* SixDigitalInputTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24858F9C24E96DEB00615BA6 /* Build configuration list for PBXNativeTarget "SixDigitalInputTestTests" */;
+			buildPhases = (
+				24858F8124E96DEB00615BA6 /* Sources */,
+				24858F8224E96DEB00615BA6 /* Frameworks */,
+				24858F8324E96DEB00615BA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24858F8724E96DEB00615BA6 /* PBXTargetDependency */,
+			);
+			name = SixDigitalInputTestTests;
+			productName = SixDigitalInputTestTests;
+			productReference = 24858F8524E96DEB00615BA6 /* SixDigitalInputTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		24858F8F24E96DEB00615BA6 /* SixDigitalInputTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24858F9F24E96DEB00615BA6 /* Build configuration list for PBXNativeTarget "SixDigitalInputTestUITests" */;
+			buildPhases = (
+				24858F8C24E96DEB00615BA6 /* Sources */,
+				24858F8D24E96DEB00615BA6 /* Frameworks */,
+				24858F8E24E96DEB00615BA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24858F9224E96DEB00615BA6 /* PBXTargetDependency */,
+			);
+			name = SixDigitalInputTestUITests;
+			productName = SixDigitalInputTestUITests;
+			productReference = 24858F9024E96DEB00615BA6 /* SixDigitalInputTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24858F6224E96DE800615BA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "宋朝阳";
+				TargetAttributes = {
+					24858F6924E96DE800615BA6 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					24858F8424E96DEB00615BA6 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 24858F6924E96DE800615BA6;
+					};
+					24858F8F24E96DEB00615BA6 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 24858F6924E96DE800615BA6;
+					};
+				};
+			};
+			buildConfigurationList = 24858F6524E96DE800615BA6 /* Build configuration list for PBXProject "SixDigitalInputTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 24858F6124E96DE800615BA6;
+			productRefGroup = 24858F6B24E96DE800615BA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24858F6924E96DE800615BA6 /* SixDigitalInputTest */,
+				24858F8424E96DEB00615BA6 /* SixDigitalInputTestTests */,
+				24858F8F24E96DEB00615BA6 /* SixDigitalInputTestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24858F6824E96DE800615BA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24858F7D24E96DEA00615BA6 /* LaunchScreen.storyboard in Resources */,
+				24858F7A24E96DEA00615BA6 /* Assets.xcassets in Resources */,
+				24858F7824E96DE800615BA6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24858F8324E96DEB00615BA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24858F8E24E96DEB00615BA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24858F6624E96DE800615BA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24858FA424E96F1000615BA6 /* CertificatePasswordTextField.m in Sources */,
+				24858F7524E96DE800615BA6 /* ViewController.m in Sources */,
+				24858F6F24E96DE800615BA6 /* AppDelegate.m in Sources */,
+				24858F8024E96DEA00615BA6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24858F8124E96DEB00615BA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24858F8A24E96DEB00615BA6 /* SixDigitalInputTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24858F8C24E96DEB00615BA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24858F9524E96DEB00615BA6 /* SixDigitalInputTestUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24858F8724E96DEB00615BA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24858F6924E96DE800615BA6 /* SixDigitalInputTest */;
+			targetProxy = 24858F8624E96DEB00615BA6 /* PBXContainerItemProxy */;
+		};
+		24858F9224E96DEB00615BA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24858F6924E96DE800615BA6 /* SixDigitalInputTest */;
+			targetProxy = 24858F9124E96DEB00615BA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		24858F7624E96DE800615BA6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24858F7724E96DE800615BA6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		24858F7B24E96DEA00615BA6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24858F7C24E96DEA00615BA6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		24858F9724E96DEB00615BA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		24858F9824E96DEB00615BA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		24858F9A24E96DEB00615BA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 95J6EU4744;
+				INFOPLIST_FILE = SixDigitalInputTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Song.SixDigitalInputTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		24858F9B24E96DEB00615BA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 95J6EU4744;
+				INFOPLIST_FILE = SixDigitalInputTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Song.SixDigitalInputTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		24858F9D24E96DEB00615BA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 95J6EU4744;
+				INFOPLIST_FILE = SixDigitalInputTestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Song.SixDigitalInputTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SixDigitalInputTest.app/SixDigitalInputTest";
+			};
+			name = Debug;
+		};
+		24858F9E24E96DEB00615BA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 95J6EU4744;
+				INFOPLIST_FILE = SixDigitalInputTestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Song.SixDigitalInputTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SixDigitalInputTest.app/SixDigitalInputTest";
+			};
+			name = Release;
+		};
+		24858FA024E96DEB00615BA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 95J6EU4744;
+				INFOPLIST_FILE = SixDigitalInputTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Song.SixDigitalInputTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SixDigitalInputTest;
+			};
+			name = Debug;
+		};
+		24858FA124E96DEB00615BA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 95J6EU4744;
+				INFOPLIST_FILE = SixDigitalInputTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Song.SixDigitalInputTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SixDigitalInputTest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24858F6524E96DE800615BA6 /* Build configuration list for PBXProject "SixDigitalInputTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24858F9724E96DEB00615BA6 /* Debug */,
+				24858F9824E96DEB00615BA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24858F9924E96DEB00615BA6 /* Build configuration list for PBXNativeTarget "SixDigitalInputTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24858F9A24E96DEB00615BA6 /* Debug */,
+				24858F9B24E96DEB00615BA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24858F9C24E96DEB00615BA6 /* Build configuration list for PBXNativeTarget "SixDigitalInputTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24858F9D24E96DEB00615BA6 /* Debug */,
+				24858F9E24E96DEB00615BA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24858F9F24E96DEB00615BA6 /* Build configuration list for PBXNativeTarget "SixDigitalInputTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24858FA024E96DEB00615BA6 /* Debug */,
+				24858FA124E96DEB00615BA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24858F6224E96DE800615BA6 /* Project object */;
+}
