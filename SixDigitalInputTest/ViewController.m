@@ -21,8 +21,6 @@
 @property (nonatomic, strong) CertificatePasswordTextField *fiveText;
 @property (nonatomic, strong) CertificatePasswordTextField *sixText;
 
-@property (nonatomic, strong) NSMutableArray *passwordArray;
-
 @end
 
 @implementation ViewController
@@ -31,9 +29,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    // 此处初始化防止后面输入后数组添加失败
-    self.passwordArray = [NSMutableArray arrayWithObjects:@"", @"", @"", @"", @"", @"", nil];
     
     [self customView];
 }
@@ -182,43 +177,24 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (textField.text.length < 1 || [string isEqualToString:@""]) {
-        // 对 textfield 应位 array 输入记录
-        if ([textField isEqual:self.oneText]) {
-            [self.passwordArray replaceObjectAtIndex:0 withObject:string];
-        } else if ([textField isEqual:self.twoText]) {
-            [self.passwordArray replaceObjectAtIndex:1 withObject:string];
-        } else if ([textField isEqual:self.threeText]) {
-            [self.passwordArray replaceObjectAtIndex:2 withObject:string];
-        } else if ([textField isEqual:self.fourText]) {
-            [self.passwordArray replaceObjectAtIndex:3 withObject:string];
-        } else if ([textField isEqual:self.fiveText]) {
-            [self.passwordArray replaceObjectAtIndex:4 withObject:string];
-        } else if ([textField isEqual:self.sixText]) {
-            [self.passwordArray replaceObjectAtIndex:5 withObject:string];
-        }
         return YES;
     }
     // 若输入中断再次输入时可以立即定位并唤起正确第一响应者
     // 此处加入数组防止中间某位删除再重新输入后 textField 与对应位不匹配造成数据错误
     if ([textField isEqual:self.oneText]) {
         self.twoText.text = string;
-        [self.passwordArray replaceObjectAtIndex:1 withObject:string];
         [self.twoText becomeFirstResponder];
     } else if ([textField isEqual:self.twoText]) {
         self.threeText.text = string;
-        [self.passwordArray replaceObjectAtIndex:2 withObject:string];
         [self.threeText becomeFirstResponder];
     } else if ([textField isEqual:self.threeText]) {
         self.fourText.text = string;
-        [self.passwordArray replaceObjectAtIndex:3 withObject:string];
         [self.fourText becomeFirstResponder];
     } else if ([textField isEqual:self.fourText]) {
         self.fiveText.text = string;
-        [self.passwordArray replaceObjectAtIndex:4 withObject:string];
         [self.fiveText becomeFirstResponder];
     } else if ([textField isEqual:self.fiveText]) {
         self.sixText.text = string;
-        [self.passwordArray replaceObjectAtIndex:5 withObject:string];
         [self.sixText becomeFirstResponder];
     }
     return NO;
@@ -238,7 +214,8 @@
 #pragma mark - Action
 
 - (void)confirmPassword {
-    NSString *passwordString = [self.passwordArray componentsJoinedByString:@""];
+    NSMutableArray *passwordArray = [NSMutableArray arrayWithObjects:self.oneText.text, self.twoText.text, self.threeText.text, self.fourText.text, self.fiveText.text, self.sixText.text, nil];
+    NSString *passwordString = [passwordArray componentsJoinedByString:@""];
     if (!passwordString.length) {
         NSLog(@"请输入验证码");
         return;
