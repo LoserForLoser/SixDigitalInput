@@ -121,6 +121,18 @@
 #pragma mark - Text Field Delegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    // 点击任意 textfield 确保唤起最前无内容 textfield
+    if ([textField isEqual:self.sixText] && !self.fiveText.text.length) {
+        [self.fiveText becomeFirstResponder];
+    } else if ([textField isEqual:self.fiveText] && !self.fourText.text.length) {
+        [self.fourText becomeFirstResponder];
+    } else if ([textField isEqual:self.fourText] && !self.threeText.text.length) {
+        [self.threeText becomeFirstResponder];
+    } else if ([textField isEqual:self.threeText] && !self.twoText.text.length) {
+        [self.twoText becomeFirstResponder];
+    } else if ([textField isEqual:self.twoText] && !self.oneText.text.length) {
+        [self.oneText becomeFirstResponder];
+    }
     // 若当前 textfield 有输入内容则变色
     if ([textField isEqual:self.oneText] && self.twoText.text.length < 1) {
         textField.alpha = 1;
@@ -187,20 +199,26 @@
         return YES;
     }
     // 若输入中断再次输入时可以立即定位并唤起正确第一响应者
+    // 此处加入数组防止中间某位删除再重新输入后 textField 与对应位不匹配造成数据错误
     if ([textField isEqual:self.oneText]) {
         self.twoText.text = string;
+        [self.passwordArray replaceObjectAtIndex:1 withObject:string];
         [self.twoText becomeFirstResponder];
     } else if ([textField isEqual:self.twoText]) {
         self.threeText.text = string;
+        [self.passwordArray replaceObjectAtIndex:2 withObject:string];
         [self.threeText becomeFirstResponder];
     } else if ([textField isEqual:self.threeText]) {
         self.fourText.text = string;
+        [self.passwordArray replaceObjectAtIndex:3 withObject:string];
         [self.fourText becomeFirstResponder];
     } else if ([textField isEqual:self.fourText]) {
         self.fiveText.text = string;
+        [self.passwordArray replaceObjectAtIndex:4 withObject:string];
         [self.fiveText becomeFirstResponder];
     } else if ([textField isEqual:self.fiveText]) {
         self.sixText.text = string;
+        [self.passwordArray replaceObjectAtIndex:5 withObject:string];
         [self.sixText becomeFirstResponder];
     }
     return NO;
