@@ -176,11 +176,11 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    // 此处判断配合 textFieldShouldBeginEditing 点击任意 textfield 确保唤起最前无内容 textfield
     if (textField.text.length < 1 || [string isEqualToString:@""]) {
         return YES;
     }
     // 若输入中断再次输入时可以立即定位并唤起正确第一响应者
-    // 此处加入数组防止中间某位删除再重新输入后 textField 与对应位不匹配造成数据错误
     if ([textField isEqual:self.oneText]) {
         self.twoText.text = string;
         [self.twoText becomeFirstResponder];
@@ -216,15 +216,18 @@
 - (void)confirmPassword {
     NSMutableArray *passwordArray = [NSMutableArray arrayWithObjects:self.oneText.text, self.twoText.text, self.threeText.text, self.fourText.text, self.fiveText.text, self.sixText.text, nil];
     NSString *passwordString = [passwordArray componentsJoinedByString:@""];
+    NSString *messageStr;
     if (!passwordString.length) {
-        NSLog(@"请输入验证码");
-        return;
+        messageStr = @"请输入验证码";
+    } else if (passwordString.length < 6) {
+        messageStr = @"请输入六位验证码";
+    } else {
+        messageStr = [NSString stringWithFormat:@"输入验证码/密码为：%@", passwordString];
     }
-    if (passwordString.length < 6) {
-        NSLog(@"请输入六位验证码");
-        return;
-    }
-    NSLog(@"输入验证码/密码为：%@", passwordString);
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示⚠️" message:messageStr preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:alert animated:YES completion:nil];
+    UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:confirm];
 }
 
 @end
