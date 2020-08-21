@@ -14,12 +14,7 @@
 
 @interface ViewController ()<UITextFieldDelegate, CPTextFieldDelegate>
 
-@property (nonatomic, strong) CertificatePasswordTextField *oneText;
-@property (nonatomic, strong) CertificatePasswordTextField *twoText;
-@property (nonatomic, strong) CertificatePasswordTextField *threeText;
-@property (nonatomic, strong) CertificatePasswordTextField *fourText;
-@property (nonatomic, strong) CertificatePasswordTextField *fiveText;
-@property (nonatomic, strong) CertificatePasswordTextField *sixText;
+@property (nonatomic, strong) NSMutableArray *textFieldArray;
 
 @end
 
@@ -41,23 +36,25 @@
     titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
     [self.view addSubview:titleLabel];
     
-    self.oneText = [self passwordTextField];
-    self.oneText.frame = CGRectMake(24, 150, 20, 30);
+    CertificatePasswordTextField *oneText = [self passwordTextField];
+    oneText.frame = CGRectMake(24, 150, 20, 30);
     
-    self.twoText = [self passwordTextField];
-    self.twoText.frame = CGRectMake(54, 150, 20, 30);
+    CertificatePasswordTextField *twoText = [self passwordTextField];
+    twoText.frame = CGRectMake(54, 150, 20, 30);
     
-    self.threeText = [self passwordTextField];
-    self.threeText.frame = CGRectMake(84, 150, 20, 30);
+    CertificatePasswordTextField *threeText = [self passwordTextField];
+    threeText.frame = CGRectMake(84, 150, 20, 30);
     
-    self.fourText = [self passwordTextField];
-    self.fourText.frame = CGRectMake(114, 150, 20, 30);
+    CertificatePasswordTextField *fourText = [self passwordTextField];
+    fourText.frame = CGRectMake(114, 150, 20, 30);
     
-    self.fiveText = [self passwordTextField];
-    self.fiveText.frame = CGRectMake(144, 150, 20, 30);
+    CertificatePasswordTextField *fiveText = [self passwordTextField];
+    fiveText.frame = CGRectMake(144, 150, 20, 30);
     
-    self.sixText = [self passwordTextField];
-    self.sixText.frame = CGRectMake(174, 150, 20, 30);
+    CertificatePasswordTextField *sixText = [self passwordTextField];
+    sixText.frame = CGRectMake(174, 150, 20, 30);
+    
+    self.textFieldArray = [NSMutableArray arrayWithObjects:oneText, twoText, threeText, fourText, fiveText, sixText, nil];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     confirmButton.frame = CGRectMake(50, 300, 150, 44);
@@ -79,17 +76,14 @@
 #pragma mark - Text Field Notification
 
 - (void)changedTextField:(UITextField *)textField {
-    // 使 shouldChangeCharactersInRange 为当前第一响应者 textfield，否则输入判断获取的是当前响应者的前一位造成 array 数据错误
-    if ([textField isEqual:self.oneText]) {
-        [self.twoText becomeFirstResponder];
-    } else if ([textField isEqual:self.twoText]) {
-        [self.threeText becomeFirstResponder];
-    } else if ([textField isEqual:self.threeText]) {
-        [self.fourText becomeFirstResponder];
-    } else if ([textField isEqual:self.fourText]) {
-        [self.fiveText becomeFirstResponder];
-    } else if ([textField isEqual:self.fiveText]) {
-        [self.sixText becomeFirstResponder];
+    // 使 shouldChangeCharactersInRange 为当前第一响应者 textfield，否则输入判断获取的是当前响应者的前一位
+    for (NSInteger count = 0; count < self.textFieldArray.count - 1; count++) {
+        UITextField *nowTextField = self.textFieldArray[count];
+        UITextField *afterTextField = self.textFieldArray[count + 1];
+        if ([textField isEqual:nowTextField]) {
+            [afterTextField becomeFirstResponder];
+            break;
+        }
     }
 }
 
@@ -97,18 +91,14 @@
 
 - (void)cpTextFieldDeleteBackward:(CertificatePasswordTextField *)textField {
     // 若输入中断再次输入时可以立即定位并唤起正确第一响应者
-    if ([textField.text isEqualToString:@""]) {
-        textField.text = @"";
-        if ([textField isEqual:self.sixText]) {
-            [self.fiveText becomeFirstResponder];
-        } else if ([textField isEqual:self.fiveText]) {
-            [self.fourText becomeFirstResponder];
-        } else if ([textField isEqual:self.fourText]) {
-            [self.threeText becomeFirstResponder];
-        } else if ([textField isEqual:self.threeText]) {
-            [self.twoText becomeFirstResponder];
-        } else if ([textField isEqual:self.twoText]) {
-            [self.oneText becomeFirstResponder];
+    if (!textField.text.length) {
+        for (NSInteger count = self.textFieldArray.count - 1; count > 0; count--) {
+            UITextField *nowTextField = self.textFieldArray[count];
+            UITextField *beforeTextField = self.textFieldArray[count - 1];
+            if ([textField isEqual:nowTextField]) {
+                [beforeTextField becomeFirstResponder];
+                break;
+            }
         }
     }
 }
@@ -117,45 +107,24 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     // 点击任意 textfield 确保唤起最前无内容 textfield
-    if ([textField isEqual:self.sixText] && !self.fiveText.text.length) {
-        [self.fiveText becomeFirstResponder];
-    } else if ([textField isEqual:self.fiveText] && !self.fourText.text.length) {
-        [self.fourText becomeFirstResponder];
-    } else if ([textField isEqual:self.fourText] && !self.threeText.text.length) {
-        [self.threeText becomeFirstResponder];
-    } else if ([textField isEqual:self.threeText] && !self.twoText.text.length) {
-        [self.twoText becomeFirstResponder];
-    } else if ([textField isEqual:self.twoText] && !self.oneText.text.length) {
-        [self.oneText becomeFirstResponder];
+    for (NSInteger count = self.textFieldArray.count - 1; count > 0; count--) {
+        UITextField *nowTextField = self.textFieldArray[count];
+        UITextField *beforeTextField = self.textFieldArray[count - 1];
+        if ([textField isEqual:nowTextField] && !beforeTextField.text.length) {
+            [beforeTextField becomeFirstResponder];
+            break;
+        }
     }
     // 若当前 textfield 有输入内容则变色
-    if ([textField isEqual:self.oneText] && self.twoText.text.length < 1) {
-        textField.alpha = 1;
-           return YES;
-    } else if ([textField isEqual:self.twoText] && self.threeText.text.length < 1) {
-        if (self.oneText.text.length > 0) {
-            textField.alpha = 1;
-            return YES;
-        }
-    } else if ([textField isEqual:self.threeText] && self.fourText.text.length < 1) {
-        if (self.twoText.text.length > 0) {
-            textField.alpha = 1;
-            return YES;
-        }
-    } else if ([textField isEqual:self.fourText] && self.fiveText.text.length < 1) {
-        if (self.threeText.text.length > 0) {
-            textField.alpha = 1;
-            return YES;
-        }
-    } else if ([textField isEqual:self.fiveText] && self.sixText.text.length < 1) {
-        if (self.fourText.text.length > 0) {
-            textField.alpha = 1;
-            return YES;
-        }
-    } else if ([textField isEqual:self.sixText]) {
-        if (self.fiveText.text.length > 0) {
-            textField.alpha = 1;
-            return YES;
+    for (NSInteger count = 0; count < self.textFieldArray.count; count++) {
+        UITextField *beforeTextField = (count == 0) ? nil : self.textFieldArray[count - 1];
+        UITextField *nowTextField = self.textFieldArray[count];
+        UITextField *afterTextField = (count == self.textFieldArray.count - 1) ? nil : self.textFieldArray[count + 1];
+        if ([textField isEqual:nowTextField] && !afterTextField.text.length) {
+            if (!beforeTextField || beforeTextField.text.length) {
+                textField.alpha = 1;
+                return YES;
+            }
         }
     }
     return NO;
@@ -181,21 +150,14 @@
         return YES;
     }
     // 若输入中断再次输入时可以立即定位并唤起正确第一响应者
-    if ([textField isEqual:self.oneText]) {
-        self.twoText.text = string;
-        [self.twoText becomeFirstResponder];
-    } else if ([textField isEqual:self.twoText]) {
-        self.threeText.text = string;
-        [self.threeText becomeFirstResponder];
-    } else if ([textField isEqual:self.threeText]) {
-        self.fourText.text = string;
-        [self.fourText becomeFirstResponder];
-    } else if ([textField isEqual:self.fourText]) {
-        self.fiveText.text = string;
-        [self.fiveText becomeFirstResponder];
-    } else if ([textField isEqual:self.fiveText]) {
-        self.sixText.text = string;
-        [self.sixText becomeFirstResponder];
+    for (NSInteger count = 0; count < self.textFieldArray.count - 1; count++) {
+        UITextField *nowTextField = self.textFieldArray[count];
+        UITextField *afterTextField = self.textFieldArray[count + 1];
+        if ([textField isEqual:nowTextField]) {
+            afterTextField.text = string;
+            [afterTextField becomeFirstResponder];
+            break;
+        }
     }
     return NO;
 }
@@ -203,18 +165,18 @@
 #pragma mark - UIResponder Action
 // 系统自带方法取消第一响应者
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.oneText resignFirstResponder];
-    [self.twoText resignFirstResponder];
-    [self.threeText resignFirstResponder];
-    [self.fourText resignFirstResponder];
-    [self.fiveText resignFirstResponder];
-    [self.sixText resignFirstResponder];
+    for (UITextField *textField in self.textFieldArray) {
+        [textField resignFirstResponder];
+    }
 }
 
 #pragma mark - Action
 
 - (void)confirmPassword {
-    NSMutableArray *passwordArray = [NSMutableArray arrayWithObjects:self.oneText.text, self.twoText.text, self.threeText.text, self.fourText.text, self.fiveText.text, self.sixText.text, nil];
+    NSMutableArray *passwordArray = [NSMutableArray array];
+    for (UITextField *textField in self.textFieldArray) {
+        [passwordArray addObject:textField.text];
+    }
     NSString *passwordString = [passwordArray componentsJoinedByString:@""];
     NSString *messageStr;
     if (!passwordString.length) {
